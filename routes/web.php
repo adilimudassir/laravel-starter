@@ -13,10 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+/*
+ * Frontend Routes
+ */
+Route::group(['as' => 'frontend.'], function () {
+    includeRouteFiles(__DIR__.'/frontend/');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+/*
+ * Backend Routes
+ */
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    includeRouteFiles(__DIR__.'/backend/');
+});
