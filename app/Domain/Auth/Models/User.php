@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Models\Auth;
+namespace App\Domain\Auth\Models\Auth;
 
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
+use Altek\Accountant\Contracts\Recordable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements Recordable
 {
-    use Notifiable, HasRoles;
+    use Notifiable, HasRoles, \Altek\Accountant\Recordable;
 
     /**
      * The attributes that are mass assignable.
