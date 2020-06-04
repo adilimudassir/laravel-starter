@@ -2,7 +2,7 @@
 namespace App\Domain\Auth\Repository;
 
 use App\Repositories\BaseRepository;
-use App\Domain\Auth\Models\Auth\Role;
+use Domain\Auth\Models\Role;
 
 class RoleRepository extends BaseRepository
 {

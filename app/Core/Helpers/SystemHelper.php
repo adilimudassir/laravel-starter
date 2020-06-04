@@ -20,7 +20,7 @@ if (! function_exists('includeFilesInFolder')) {
                     $iterator->isReadable() && 
                     $iterator->current()->getExtension() === 'php'
                 ) {
-                    require $iterator->key();
+                    require_once $iterator->key();
                 }
 
                 $iterator->next();

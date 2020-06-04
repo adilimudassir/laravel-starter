@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Auth\Models\Auth;
+namespace Domain\Auth\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Altek\Accountant\Contracts\Recordable;
