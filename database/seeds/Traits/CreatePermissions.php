@@ -1,6 +1,6 @@
 <?php
 
-use App\Domain\Auth\Models\Auth\Role;
+use Domain\Auth\Models\Role;
 use Spatie\Permission\Models\Permission;
 
 trait CreatePermissions
@@ -11,42 +11,16 @@ trait CreatePermissions
         'read',
         'update',
         'delete',
-        'forceDelete',
-        'restore',
         [
             '*' => [
                 'view backend',
-                'manage hospital',
-                'issue-pharmacy-drugs',
-                'issue-maternity-drugs',
-                'issue-male-ward-drugs'
             ],
-            'admissions' => [
-                'discharge'
-            ]
         ]
     ];
 
     protected $entities = [
         'users',
         'roles',
-        'logs',
-        'patients',
-        'services',
-        'drugs',
-        'invoices',
-        'payments',
-        'appointments',
-        'beds',
-        'admissions',
-        'hmos',
-        'laboratories',
-        'tests',
-        'investigations',
-        'drug_stores',
-        'drug_quantities',
-        'prescriptions',
-        'diagnoses'
     ];
 
     public function generatePermissions()
@@ -62,7 +36,7 @@ trait CreatePermissions
 
     private function assignRoleToPermission($permission)
     {
-        $role = Role::findByName(config('access.users.admin_role'));
+        $role = Role::findByName('admin');
         $role->givePermissionTo($permission);
     }
 
