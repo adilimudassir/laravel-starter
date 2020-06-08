@@ -1,0 +1,12 @@
+require('jquery');
+require('../vendor/jquery-browser-mobile/jquery.browser.mobile');
+require('popper.js');
+require('bootstrap');
+require('bootstrap-datepicker/dist/js/bootstrap-datepicker');
+require('../vendor/common/common');
+require('nanoscroller/bin/javascripts/jquery.nanoscroller');
+require('magnific-popup/dist/jquery.magnific-popup');
+require('jquery.placeholder/jquery.placeholder');
+require('./theme');
+require('./custom');
+require('./theme.init');
