@@ -1,6 +1,6 @@
 <?php
 
-use Domain\Auth\Models\Role;
+use Domains\Auth\Models\Role;
 use Spatie\Permission\Models\Permission;
 
 trait CreatePermissions
