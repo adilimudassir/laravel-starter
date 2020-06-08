@@ -1,8 +1,8 @@
 <?php
-namespace App\Domain\Auth\Repositories;
+namespace Domains\Auth\Repositories;
 
+use Domains\Auth\Models\User;
 use App\Repositories\BaseRepository;
-use Domain\Auth\Models\User;
 
 class UserRepository extends BaseRepository
 {

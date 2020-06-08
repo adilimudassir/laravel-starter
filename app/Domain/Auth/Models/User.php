@@ -1,16 +1,22 @@
 <?php
 
-namespace Domain\Auth\Models;
+namespace Domains\Auth\Models;
 
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Altek\Accountant\Contracts\Recordable;
+use Domains\Auth\Notifications\VerifyEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
+
 
 class User extends Authenticatable implements Recordable, MustVerifyEmail
 {
-    use Notifiable, HasRoles, \Altek\Accountant\Recordable;
+    use Notifiable,
+        HasRoles, 
+        MustVerifyEmailTrait,
+        \Altek\Accountant\Recordable;
 
     /**
      * The attributes that are mass assignable.
@@ -55,4 +61,12 @@ class User extends Authenticatable implements Recordable, MustVerifyEmail
         'last_login_at' => 'datetime',
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Send the registration verification email.
+     */
+    public function sendEmailVerificationNotification(): void
+    {
+        $this->notify(new VerifyEmail());
+    }
 }

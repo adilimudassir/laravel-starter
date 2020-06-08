@@ -2,7 +2,7 @@
 
 namespace Frontend\Http\Controllers\Auth;
 
-use Domain\Auth\Models\User;
+use Domains\Auth\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;

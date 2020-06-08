@@ -1,7 +1,7 @@
 <?php
-namespace App\Domain\General\Models;
+namespace Domains\General\Models;
 
-use App\Domain\General\Models\BaseModel;
+use Illuminate\Database\Eloquent\Model;
 use Altek\Accountant\Contracts\Recordable;
 
 class BaseModel extends Model implements Recordable

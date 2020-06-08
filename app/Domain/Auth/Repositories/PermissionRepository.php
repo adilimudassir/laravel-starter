@@ -1,8 +1,8 @@
 <?php
-namespace App\Domain\Auth\Repository;
+namespace Domains\Auth\Repository;
 
+use Domains\Auth\Models\Permission;
 use App\Repositories\BaseRepository;
-use Domain\Auth\Models\Permission;
 
 class PermissionRepository extends BaseRepository
 {
