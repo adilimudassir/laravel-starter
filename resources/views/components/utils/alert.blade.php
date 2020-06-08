@@ -1,4 +1,4 @@
-@props(['dismissable' => true, 'type' => 'success', 'ariaLabel' => __('Close')])
+@props(['dismissable' => true, 'type' => 'success', 'ariaLabel' => 'Close'])
 
 <div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }} role="alert">
     @if ($dismissable)
