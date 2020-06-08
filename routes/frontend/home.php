@@ -1,6 +1,12 @@
 <?php
 
-use App\Http\Controllers\Frontend\HomeController;
+use Frontend\Http\Controllers\HomeController;
 
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('index');
+});
+
+Route::group(['middleware' => 'verified', 'auth'], function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});

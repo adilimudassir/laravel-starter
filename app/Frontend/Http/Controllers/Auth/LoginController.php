@@ -67,13 +67,13 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    // protected function authenticated(Request $request, $user)
-    // {
-        // if (! $user->isActive()) {
-        //     auth()->logout();
+    protected function authenticated(Request $request, $user)
+    {
+        if (! $user->isActive()) {
+            auth()->logout();
 
-        //     return redirect()->route('frontend.auth.login')->withFlashDanger(__('Your account has been deactivated.'));
-        // }
+            return redirect()->route('frontend.auth.login')->withFlashDanger(__('Your account has been deactivated.'));
+        }
 
         // event(new UserLoggedIn($user));
 
@@ -82,5 +82,5 @@ class LoginController extends Controller
         // }
 
         // return redirect()->intended($this->redirectPath());
-    // }
+    }
 }

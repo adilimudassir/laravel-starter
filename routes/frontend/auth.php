@@ -1,14 +1,14 @@
 <?php
 
-use App\Http\Controllers\Frontend\Auth\LoginController;
-use App\Http\Controllers\Frontend\Auth\RegisterController;
-use App\Http\Controllers\Frontend\Auth\VerificationController;
-use App\Http\Controllers\Frontend\Auth\ResetPasswordController;
-use App\Http\Controllers\Frontend\Auth\ForgotPasswordController;
-use App\Http\Controllers\Frontend\Auth\ConfirmPasswordController;
+use Frontend\Http\Controllers\Auth\LoginController;
+use Frontend\Http\Controllers\Auth\RegisterController;
+use Frontend\Http\Controllers\Auth\VerificationController;
+use Frontend\Http\Controllers\Auth\ResetPasswordController;
+use Frontend\Http\Controllers\Auth\ForgotPasswordController;
+use Frontend\Http\Controllers\Auth\ConfirmPasswordController;
 
-Route::group(['as' => 'auth.'], function () {
-    Route::middleware('auth')->group( function () {
+Route::group(['as' => 'auth.', 'prefix' => 'auth'], function () {
+    Route::middleware('auth', 'verified')->group(function () {
         Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
         Route::get('password/confirm', [ConfirmPasswordController::class, 'showConfirmForm'])->name('password.confirm');
@@ -19,7 +19,7 @@ Route::group(['as' => 'auth.'], function () {
         Route::post('email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
     });
 
-    Route::middleware('guest')->group( function () {
+    Route::middleware('guest')->group(function () {
         Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
         Route::post('login', [LoginController::class, 'login']);
 
@@ -32,5 +32,3 @@ Route::group(['as' => 'auth.'], function () {
         Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
     });
 });
-
-
