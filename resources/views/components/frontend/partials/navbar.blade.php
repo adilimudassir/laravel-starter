@@ -19,13 +19,11 @@
                 <!-- Authentication Links -->
                 @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('frontend.auth.login') }}">{{ __('Login') }}</a>
+                    <a class="nav-link" href="{{ route('frontend.auth.login') }}">Login</a>
                 </li>
-                @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('frontend.auth.register') }}">{{ __('Register') }}</a>
+                    <a class="nav-link" href="{{ route('frontend.auth.register') }}">Register</a>
                 </li>
-                @endif
                 @else
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class VerifyMail extends Notification
+class VerifyEmail extends Notification
 {
     use Queueable;
 

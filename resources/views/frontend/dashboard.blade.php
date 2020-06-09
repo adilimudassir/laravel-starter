@@ -1,6 +1,6 @@
 <x-frontend.layouts.app>
     <x-slot name="title">
-        Home Page
+        Dashboard
     </x-slot>    
-    <h1 class="text-center">Hello World</h1>
+    <h1 class="text-center">Welcome, {{ auth()->user()->name }}</h1>
 </x-frontend.layouts.app>

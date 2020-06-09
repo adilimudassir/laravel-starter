@@ -8,17 +8,19 @@ use Frontend\Http\Controllers\Auth\ForgotPasswordController;
 use Frontend\Http\Controllers\Auth\ConfirmPasswordController;
 
 Route::group(['as' => 'auth.', 'prefix' => 'auth'], function () {
-    Route::middleware('auth', 'verified')->group(function () {
-        Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+    Route::middleware('auth')->group(function () {
+        Route::middleware('verified')->group(function () {
+            Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
-        Route::get('password/confirm', [ConfirmPasswordController::class, 'showConfirmForm'])->name('password.confirm');
-        Route::post('password/confirm', [ConfirmPasswordController::class, 'confirm']);
-
+            Route::get('password/confirm', [ConfirmPasswordController::class, 'showConfirmForm'])->name('password.confirm');
+            Route::post('password/confirm', [ConfirmPasswordController::class, 'confirm']);
+        });
+            
         Route::get('email/verify', [VerificationController::class, 'show'])->name('verification.notice');
         Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
         Route::post('email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
     });
-
+        
     Route::middleware('guest')->group(function () {
         Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
         Route::post('login', [LoginController::class, 'login']);

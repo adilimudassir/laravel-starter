@@ -7,6 +7,7 @@
     <x-backend.partials.navbar />
     {{ Breadcrumbs::render() }}
     <main class="">
+        @include('partials.messages')
         {{ $slot }}
     </main>    
     <x-backend.partials.footer />

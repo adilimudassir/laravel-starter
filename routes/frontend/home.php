@@ -1,6 +1,7 @@
 <?php
 
 use Frontend\Http\Controllers\HomeController;
+use Frontend\Http\Controller\DashboardController;
 
 
 Route::group(['middleware' => 'guest'], function () {

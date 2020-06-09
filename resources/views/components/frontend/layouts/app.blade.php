@@ -6,9 +6,10 @@
     </x-slot>
     <x-frontend.partials.navbar />
     @auth
-        {{ Breadcrumbs::render() }}
+        {{-- Breadcrumbs::render()  --}}
     @endauth
-    <main class="">
+    <main class="py-4">
+        @include('partials.messages')
         {{ $slot }}
     </main>    
     <x-frontend.partials.footer />
