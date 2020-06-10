@@ -26,7 +26,7 @@
                 </li>
                 @else
                 @can('access-backend')
-                <a href="{{ route('backend.dashboard') }}" class="btn btn-success">Admin Panel</a>
+                <a href="{{ route('backend.dashboard') }}" class="btn btn-outline-success">Admin Panel</a>
                 @endcan
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

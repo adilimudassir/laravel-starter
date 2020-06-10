@@ -10,7 +10,7 @@
 	</div>
 	
 	<div class="header-right">
-		<a href="{{ route('frontend.dashboard') }}" class="btn btn-default">Home</a>
+		<a href="{{ route('frontend.dashboard') }}" class="btn btn-outline-primary">Home</a>
 		<span class="separator"></span>
 		<div id="userbox" class="userbox">
 			<a href="#" data-toggle="dropdown">
