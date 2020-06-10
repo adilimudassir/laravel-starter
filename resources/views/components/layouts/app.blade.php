@@ -8,6 +8,7 @@
     <!-- Styles -->
     {{ $styles }}
     <livewire:styles>
+    <script src="{{ asset('vendor/modernizr-custom.js') }}"></script>
 </head>
 <body>
     <div id="app">

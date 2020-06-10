@@ -1,10 +1,12 @@
 <?php
 
+use Domains\Auth\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserTableSeeder extends Seeder
 {
-    use DisableForeignkeys;
+    use DisableForeignKeys;
     /**
      * Run the database seeds.
      *
@@ -16,19 +18,19 @@ class UserTableSeeder extends Seeder
 
         // Add the master administrator, user id of 1
         User::create([
-            'name' => 'Admin',
+            'name' => 'John Doe',
             'email' => 'admin@admin.com',
-            'password' => 'secret',
-            'confirmation_code' => md5(uniqid(mt_rand(), true)),
-            'confirmed' => true,
+            'password' => Hash::make('secret'),
+            'email_verified_at' => now(),
+            'active' => true,
         ]);
 
         User::create([
             'name' => 'User',
             'email' => 'user@user.com',
-            'password' => 'secret',
-            'confirmation_code' => md5(uniqid(mt_rand(), true)),
-            'confirmed' => true,
+            'password' => Hash::make('secret'),
+            'email_verified_at' => now(),
+            'active' => true,
         ]);
 
         $this->enableForeignkeys();

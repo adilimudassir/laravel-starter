@@ -41,3 +41,15 @@ if (! function_exists('includeRouteFiles')) {
         includeFilesInFolder($folder);
     }
 }
+
+
+if (! function_exists('home_route')){
+    
+    function home_route() {
+        // return auth()->user()->can('access-backend') 
+        // ? route('backend.dashboard')
+        // : route('frontend.dashboard'); 
+
+        return route('frontend.dashboard');
+    }
+}

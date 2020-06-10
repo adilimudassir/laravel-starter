@@ -23,6 +23,6 @@ Route::group(['as' => 'frontend.'], function () {
 /*
  * Backend Routes
  */
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::group(['prefix' => 'admin', 'as' => 'backend.'], function () {
     includeRouteFiles(__DIR__.'/backend/');
 });

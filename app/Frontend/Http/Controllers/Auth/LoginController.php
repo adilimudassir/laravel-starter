@@ -44,10 +44,10 @@ class LoginController extends Controller
      *
      * @return string
      */
-    // public function redirectPath()
-    // {
-    //     return route(homeRoute());
-    // }
+    public function redirectPath()
+    {
+        return home_route();
+    }
 
     /**
      * Show the application's login form.

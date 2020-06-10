@@ -3,7 +3,7 @@ namespace Backend\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class DashboardController extends Controller
 {
     /**
      * create an instance of the controller
@@ -11,5 +11,12 @@ class HomeController extends Controller
      * @return Void
      */
     public function __construct()
-    {}
+    {
+        $this->middleware('auth');
+    }
+
+    public function index()
+    {
+        return view('backend.dashboard');
+    }
 }

@@ -13,7 +13,7 @@ trait CreatePermissions
         'delete',
         [
             '*' => [
-                'view backend',
+                'access-backend',
             ],
         ]
     ];

@@ -22,12 +22,14 @@ class ConfirmPasswordController extends Controller
     use ConfirmsPasswords;
 
     /**
-     * Where to redirect users when the intended url fails.
+     * Where to redirect users after login.
      *
-     * @var string
+     * @return string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
+    public function redirectPath()
+    {
+        return home_route();
+    }
     /**
      * Create a new controller instance.
      *
