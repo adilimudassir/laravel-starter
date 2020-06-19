@@ -1,4 +1,4 @@
 
 ## About Laravel Starter Boilerplate
 
-This is a starter boilerplate i create to kickstart my next laravel project
+This is a starter boilerplate I created to kickstart my next laravel projects
