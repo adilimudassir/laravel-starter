@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 class PermissionRoleTableSeeder extends Seeder
 {
     use DisableForeignKeys, CreatePermissions;
+
     /**
      * Run the database seeds.
      *
@@ -18,7 +19,7 @@ class PermissionRoleTableSeeder extends Seeder
         // Create Roles
         collect([
             'admin',
-            'user'
+            'user',
         ])->each(function ($role) {
             Role::firstOrCreate(['name' => $role]);
         });
@@ -26,6 +27,5 @@ class PermissionRoleTableSeeder extends Seeder
         $this->generatePermissions();
 
         $this->enableForeignKeys();
-
     }
 }

@@ -1,6 +1,5 @@
 <?php
 
-
 /*
  * Frontend Routes
  */

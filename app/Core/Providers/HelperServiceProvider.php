@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use RecursiveIteratorIterator;
-use RecursiveDirectoryIterator;
 use Illuminate\Support\ServiceProvider;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
 
 class HelperServiceProvider extends ServiceProvider
 {
@@ -20,9 +20,9 @@ class HelperServiceProvider extends ServiceProvider
 
         while ($iterator->valid()) {
             if (
-                !$iterator->isDot() &&
-                $iterator->isFile() && 
-                $iterator->isReadable() && 
+                ! $iterator->isDot() &&
+                $iterator->isFile() &&
+                $iterator->isReadable() &&
                 $iterator->current()->getExtension() === 'php'
             ) {
                 require $iterator->key();

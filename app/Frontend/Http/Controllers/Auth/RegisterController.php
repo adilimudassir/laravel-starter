@@ -2,13 +2,11 @@
 
 namespace Frontend\Http\Controllers\Auth;
 
-use Domains\Auth\Models\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Support\Facades\Validator;
+use Domains\Auth\Models\User;
 use Domains\Auth\Repositories\UserRepository;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -34,6 +32,7 @@ class RegisterController extends Controller
     {
         return home_route();
     }
+
     /**
      * Create a new controller instance.
      *
