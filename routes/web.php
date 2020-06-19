@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
  * Frontend Routes
  */
 Route::group(['as' => 'frontend.'], function () {
-    includeRouteFiles(__DIR__.'/frontend/');
+    // includeRouteFiles(__DIR__.'/frontend/');
+    require 'frontend/auth.php';
+    require 'frontend/home.php';
 });
 
 /*
