@@ -15,9 +15,9 @@ if (! function_exists('includeFilesInFolder')) {
 
             while ($iterator->valid()) {
                 if (
-                    ! $iterator->isDot() && 
-                    $iterator->isFile() && 
-                    $iterator->isReadable() && 
+                    ! $iterator->isDot() &&
+                    $iterator->isFile() &&
+                    $iterator->isReadable() &&
                     $iterator->current()->getExtension() === 'php'
                 ) {
                     require_once $iterator->key();
@@ -42,13 +42,12 @@ if (! function_exists('includeRouteFiles')) {
     }
 }
 
-
-if (! function_exists('home_route')){
-    
-    function home_route() {
-        // return auth()->user()->can('access-backend') 
+if (! function_exists('home_route')) {
+    function home_route()
+    {
+        // return auth()->user()->can('access-backend')
         // ? route('backend.dashboard')
-        // : route('frontend.dashboard'); 
+        // : route('frontend.dashboard');
 
         return route('frontend.dashboard');
     }

@@ -2,20 +2,19 @@
 
 namespace Domains\Auth\Models;
 
-use Spatie\Permission\Traits\HasRoles;
-use Illuminate\Notifications\Notifiable;
 use Altek\Accountant\Contracts\Recordable;
+use Domains\Auth\Notifications\ResetPasswordNotification;
 use Domains\Auth\Notifications\VerifyEmail;
+use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Domains\Auth\Notifications\ResetPasswordNotification;
-use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
-
+use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements Recordable, MustVerifyEmail
 {
     use Notifiable,
-        HasRoles, 
+        HasRoles,
         MustVerifyEmailTrait,
         \Altek\Accountant\Recordable;
 

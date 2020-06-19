@@ -2,15 +2,15 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use Domains\Auth\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Auth;
+use Tests\TestCase;
 
 class LoginTest extends TestCase
 {
     use RefreshDatabase;
-    
+
     public function testUserCanSeeLoginForm()
     {
         $response = $this->get(route('frontend.auth.login'));
@@ -28,10 +28,10 @@ class LoginTest extends TestCase
     public function testUserCanLoginWithCorrectCredentials()
     {
         $user = factory(User::class)->create();
-        
+
         $response = $this->post(route('frontend.auth.login'), [
             'email' => $user->email,
-            'password' => 'secret'
+            'password' => 'secret',
         ]);
         $response->assertRedirect(route('frontend.dashboard'));
         $this->assertAuthenticatedAs($user);
@@ -42,7 +42,7 @@ class LoginTest extends TestCase
         $user = factory(User::class)->make();
         $response = $this->from(route('frontend.auth.login'))->post(route('frontend.auth.login'), [
             'email' => $user->email,
-            'password' => 'wrong-password'
+            'password' => 'wrong-password',
         ]);
 
         $response->assertRedirect(route('frontend.auth.login'));
@@ -58,7 +58,7 @@ class LoginTest extends TestCase
         $response = $this->post(route('frontend.auth.login'), [
             'email' => $user->email,
             'password' => 'secret',
-            'remember' => 'on'
+            'remember' => 'on',
         ]);
         $response->assertRedirect(route('frontend.dashboard'));
         $this->assertAuthenticatedAs($user);

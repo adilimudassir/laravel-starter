@@ -1,4 +1,5 @@
 <?php
+
 namespace Backend\Http\Middleware;
 
 use Closure;
@@ -14,9 +15,10 @@ class AccessBackend
      */
     public function handle($request, Closure $next)
     {
-        if ( !auth()->user()->can('access-backend') ) {
+        if (! auth()->user()->can('access-backend')) {
             return redirect(home_route());
         }
+
         return $next($request);
     }
 }
