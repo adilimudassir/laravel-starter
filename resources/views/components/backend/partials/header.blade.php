@@ -1,7 +1,9 @@
 <header class="header">
 	<div class="logo-container">
 		<a href="{{ route('backend.dashboard') }}" class="logo">
-			Admin panel
+			<span class="font-16">
+				Admin<strong>CP</strong>
+			</span>
 		</a>
 		<div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
 			data-fire-event="sidebar-left-opened">
