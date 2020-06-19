@@ -1,13 +1,14 @@
 <?php
+
 namespace Domains\Auth\Repository;
 
-use Domains\Auth\Models\Role;
 use App\Repositories\BaseRepository;
+use Domains\Auth\Models\Role;
 
 class RoleRepository extends BaseRepository
 {
     /**
-     * create instance of the class
+     * create instance of the class.
      *
      * @param Role $role
      */

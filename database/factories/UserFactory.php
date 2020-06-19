@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use Illuminate\Support\Str;
 use Domains\Auth\Models\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------

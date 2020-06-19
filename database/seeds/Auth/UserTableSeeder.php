@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 class UserTableSeeder extends Seeder
 {
     use DisableForeignKeys;
+
     /**
      * Run the database seeds.
      *

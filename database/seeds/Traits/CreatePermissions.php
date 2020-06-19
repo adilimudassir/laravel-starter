@@ -5,7 +5,6 @@ use Spatie\Permission\Models\Permission;
 
 trait CreatePermissions
 {
-
     protected $permissions = [
         'create',
         'read',
@@ -15,7 +14,7 @@ trait CreatePermissions
             '*' => [
                 'access-backend',
             ],
-        ]
+        ],
     ];
 
     protected $entities = [
@@ -43,14 +42,14 @@ trait CreatePermissions
     private function createPermissionWithEntity($permission, $entity)
     {
         $this->assignRoleToPermission(Permission::firstOrCreate([
-            'name' => $permission . "-" . $entity
+            'name' => $permission.'-'.$entity,
         ]));
     }
 
     private function createPermissionWithoutEntity($permission)
     {
         $this->assignRoleToPermission(Permission::firstOrCreate([
-            'name' => $permission
+            'name' => $permission,
         ]));
     }
 

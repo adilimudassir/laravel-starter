@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 class UserRoleSeeder extends Seeder
 {
     use DisableForeignKeys;
+
     /**
      * Run the database seeds.
      *
@@ -17,7 +18,6 @@ class UserRoleSeeder extends Seeder
 
         optional(User::find(1))->assignRole('admin');
         optional(User::find(2))->assignRole('user');
-
 
         $this->enableForeignKeys();
     }

@@ -3,7 +3,6 @@
 namespace Frontend\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\ConfirmsPasswords;
 
 class ConfirmPasswordController extends Controller
@@ -30,6 +29,7 @@ class ConfirmPasswordController extends Controller
     {
         return home_route();
     }
+
     /**
      * Create a new controller instance.
      *

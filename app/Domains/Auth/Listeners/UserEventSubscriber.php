@@ -3,8 +3,6 @@
 namespace Domains\Auth\Listeners;
 
 use Domains\Auth\Events\UserLoggedIn;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class UserEventSubscriber
 {
