@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 7.14.1 on 2020-06-08 22:58:45.
+ * Generated for Laravel 7.15.0 on 2020-06-10 15:26:02.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -16671,6 +16671,72 @@ namespace Livewire {
          *
          * @static 
          */ 
+        public static function getRootElementTagName($dom)
+        {
+                        /** @var \Livewire\LivewireManager $instance */
+                        return $instance->getRootElementTagName($dom);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function dispatch($event, ...$params)
+        {
+                        /** @var \Livewire\LivewireManager $instance */
+                        return $instance->dispatch($event, ...$params);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function listen($event, $callback)
+        {
+                        /** @var \Livewire\LivewireManager $instance */
+                        return $instance->listen($event, $callback);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function isOnVapor()
+        {
+                        /** @var \Livewire\LivewireManager $instance */
+                        return $instance->isOnVapor();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function isLaravel7()
+        {
+                        /** @var \Livewire\LivewireManager $instance */
+                        return $instance->isLaravel7();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function resolveMethodDependencies($parameters, $reflector)
+        {
+                        /** @var \Livewire\LivewireManager $instance */
+                        return $instance->resolveMethodDependencies($parameters, $reflector);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
         public static function registerHydrationMiddleware($classes)
         {
                         /** @var \Livewire\LivewireManager $instance */
@@ -16748,10 +16814,10 @@ namespace Livewire {
          *
          * @static 
          */ 
-        public static function getRootElementTagName($dom)
+        public static function hydrateProperty($callback)
         {
                         /** @var \Livewire\LivewireManager $instance */
-                        return $instance->getRootElementTagName($dom);
+                        return $instance->hydrateProperty($callback);
         }
         
         /**
@@ -16759,10 +16825,10 @@ namespace Livewire {
          *
          * @static 
          */ 
-        public static function dispatch($event, ...$params)
+        public static function dehydrateProperty($callback)
         {
                         /** @var \Livewire\LivewireManager $instance */
-                        return $instance->dispatch($event, ...$params);
+                        return $instance->dehydrateProperty($callback);
         }
         
         /**
@@ -16770,10 +16836,10 @@ namespace Livewire {
          *
          * @static 
          */ 
-        public static function listen($event, $callback)
+        public static function performHydrateProperty($value, $property, $instance)
         {
                         /** @var \Livewire\LivewireManager $instance */
-                        return $instance->listen($event, $callback);
+                        return $instance->performHydrateProperty($value, $property, $instance);
         }
         
         /**
@@ -16781,32 +16847,10 @@ namespace Livewire {
          *
          * @static 
          */ 
-        public static function isOnVapor()
+        public static function performDehydrateProperty($value, $property, $instance)
         {
                         /** @var \Livewire\LivewireManager $instance */
-                        return $instance->isOnVapor();
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function isLaravel7()
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->isLaravel7();
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */ 
-        public static function resolveMethodDependencies($parameters, $reflector)
-        {
-                        /** @var \Livewire\LivewireManager $instance */
-                        return $instance->resolveMethodDependencies($parameters, $reflector);
+                        return $instance->performDehydrateProperty($value, $property, $instance);
         }
          
     }
@@ -17602,7 +17646,7 @@ namespace  {
              * Pass the query to a given callback.
              *
              * @param callable $callback
-             * @return \Illuminate\Database\Query\Builder 
+             * @return \Illuminate\Database\Eloquent\Builder 
              * @static 
              */ 
             public static function tap($callback)
@@ -17917,7 +17961,7 @@ namespace  {
             /**
              * Add a subselect expression to the query.
              *
-             * @param \Closure|\Illuminate\Database\Query\Builder|string $query
+             * @param \Closure|$this|string $query
              * @param string $as
              * @return \Illuminate\Database\Query\Builder 
              * @throws \InvalidArgumentException
