@@ -1,6 +1,14 @@
-<input type="password" {{ $attributes->merge(['class' => 'form-control']) }} />
-@error('password')
-    <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
+{{ html()->label(ucfirst($name))
+    ->class('form-control-label')
+    ->for($name)
+}}
+{{ html()->password($name)
+    ->class('form-control')
+    ->classIf($errors->has($name), 'is-invalid')
+}}
+@error($name)
+    {{ html()->span()->text($message)
+        ->class('invalid-feedback font-weight-bold')
+        ->attribute('role', 'alert')
+    }}
 @enderror

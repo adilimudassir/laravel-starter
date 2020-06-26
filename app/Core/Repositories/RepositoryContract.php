@@ -9,7 +9,7 @@ namespace App\Repositories;
  */
 interface RepositoryContract
 {
-    public function all();
+    public function all(array $columns = ['*']);
 
     public function count();
 

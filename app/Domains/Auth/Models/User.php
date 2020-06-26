@@ -2,14 +2,14 @@
 
 namespace Domains\Auth\Models;
 
+use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Notifications\Notifiable;
 use Altek\Accountant\Contracts\Recordable;
-use Domains\Auth\Notifications\ResetPasswordNotification;
 use Domains\Auth\Notifications\VerifyEmail;
-use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasRoles;
+use Domains\Auth\Notifications\ResetPasswordNotification;
+use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 
 class User extends Authenticatable implements Recordable, MustVerifyEmail
 {
@@ -17,6 +17,7 @@ class User extends Authenticatable implements Recordable, MustVerifyEmail
         HasRoles,
         MustVerifyEmailTrait,
         \Altek\Accountant\Recordable;
+        
 
     /**
      * The attributes that are mass assignable.
@@ -63,6 +64,15 @@ class User extends Authenticatable implements Recordable, MustVerifyEmail
     ];
 
     /**
+     * attributes appended to the model instance
+     *
+     * @var array
+     */
+    protected $appends = [
+        'roles_label'
+    ];
+
+    /**
      * Send the registration verification email.
      */
     public function sendEmailVerificationNotification(): void
@@ -84,5 +94,21 @@ class User extends Authenticatable implements Recordable, MustVerifyEmail
     public function isActive()
     {
         return $this->active;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRolesLabelAttribute()
+    {
+        $roles = $this->getRoleNames()->toArray();
+
+        if (\count($roles)) {
+            return implode(', ', array_map(function ($item) {
+                return ucwords($item);
+            }, $roles));
+        }
+
+        return 'N/A';
     }
 }

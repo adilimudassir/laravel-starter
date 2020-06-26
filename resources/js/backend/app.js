@@ -1,4 +1,5 @@
 window.$ = window.jQuery = require('jquery');
+window.Swal = require('sweetalert2');
 require('../vendor/jquery-browser-mobile/jquery.browser.mobile');
 require('popper.js');
 require('bootstrap');
@@ -20,3 +21,6 @@ if (typeof localStorage !== 'undefined') {
         sidebarLeft.scrollTop = initialPosition;
     }
 }
+
+
+require('../plugins');

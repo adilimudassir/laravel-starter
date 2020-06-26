@@ -19,6 +19,8 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "livewire/livewire": "^1.1",
+        "rappasoft/laravel-livewire-tables": "^0.1.6",
+        "spatie/laravel-html": "^2.26",
         "spatie/laravel-permission": "^3.13"
     },
     "require-dev": {

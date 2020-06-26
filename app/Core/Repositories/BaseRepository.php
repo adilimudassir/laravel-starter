@@ -70,11 +70,11 @@ abstract class BaseRepository implements RepositoryContract
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function all()
+    public function all(array $columns = ['*'])
     {
         $this->newQuery()->eagerLoad();
 
-        $models = $this->query->get();
+        $models = $this->query->orderBy('created_at', 'desc')->get($columns);
 
         $this->unsetClauses();
 
@@ -112,11 +112,11 @@ abstract class BaseRepository implements RepositoryContract
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function get()
+    public function get(array $columns = ['*'])
     {
         $this->newQuery()->eagerLoad()->setClauses()->setScopes();
 
-        $models = $this->query->get();
+        $models = $this->query->get($columns);
 
         $this->unsetClauses();
 

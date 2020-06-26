@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2020-06-10 15:26:02.
+    * Generated on 2020-06-23 22:09:43.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -46,6 +46,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
         'Spatie\Permission\PermissionRegistrar' => \Spatie\Permission\PermissionRegistrar::class,
@@ -212,6 +213,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
         'Spatie\Permission\PermissionRegistrar' => \Spatie\Permission\PermissionRegistrar::class,
@@ -378,6 +380,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
         'Spatie\Permission\PermissionRegistrar' => \Spatie\Permission\PermissionRegistrar::class,
@@ -544,6 +547,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
         'Spatie\Permission\PermissionRegistrar' => \Spatie\Permission\PermissionRegistrar::class,
@@ -710,6 +714,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
         'Spatie\Permission\PermissionRegistrar' => \Spatie\Permission\PermissionRegistrar::class,
@@ -876,6 +881,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
         'Spatie\Permission\PermissionRegistrar' => \Spatie\Permission\PermissionRegistrar::class,
@@ -1042,6 +1048,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
         'Spatie\Permission\PermissionRegistrar' => \Spatie\Permission\PermissionRegistrar::class,
@@ -1208,6 +1215,7 @@ namespace PHPSTORM_META {
         'Livewire\LivewireComponentsFinder' => \Livewire\LivewireComponentsFinder::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Nyholm\Psr7\Response::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Spatie\Permission\Contracts\Permission' => \Spatie\Permission\Models\Permission::class,
         'Spatie\Permission\Contracts\Role' => \Spatie\Permission\Models\Role::class,
         'Spatie\Permission\PermissionRegistrar' => \Spatie\Permission\PermissionRegistrar::class,

@@ -25,6 +25,8 @@ Route::group(['as' => 'frontend.'], function () {
 /*
  * Backend Routes
  */
-Route::group(['prefix' => 'admin', 'as' => 'backend.'], function () {
-    includeRouteFiles(__DIR__.'/backend/');
+Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => 'access-backend'], function () {
+    // includeRouteFiles(__DIR__.'/backend/');
+    require 'backend/dashboard.php';
+    require 'backend/users.php';
 });

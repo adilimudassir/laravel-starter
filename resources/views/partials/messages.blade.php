@@ -1,5 +1,6 @@
 <div class="row justify-content-center text-center">
-    <div class="col-md-6">
+    <div class="col-md-9">
+        {{--
         @if($errors->any())
             <x-utils.alert type="danger">
                 @foreach($errors->all() as $error)
@@ -7,7 +8,7 @@
                 @endforeach
             </x-utils.alert>
         @endif
-
+        --}}
         @if(session()->get('flash_success'))
             <x-utils.alert type="success">
                 {{ session()->get('flash_success') }}

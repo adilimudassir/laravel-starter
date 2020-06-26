@@ -7,8 +7,8 @@
     <title>{{ config('app.name', 'Laravel Starter') }} - {{ $title }}</title>
     <!-- Styles -->
     {{ $styles }}
-    <livewire:styles>
     <script src="{{ asset('vendor/modernizr-custom.js') }}"></script>
+    <livewire:styles>
 </head>
 <body>
     <div id="app">

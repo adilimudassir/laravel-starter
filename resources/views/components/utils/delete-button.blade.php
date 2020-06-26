@@ -4,9 +4,9 @@
             :action="$href"
             method="delete"
             name="delete-item"
-            button-class=""
+            :button-class="$class"
         >
-            <i class=""></i> {{ $text ?? 'Delete' }}
+            <i class="{{ $icon }}"></i> {{ $text ?? 'Delete' }}
         </x-utils.form-button>
     @endif
 @else
@@ -14,8 +14,8 @@
         :action="$href"
         method="delete"
         name="delete-item"
-        button-class=""
+        :button-class="$class"
     >
-        <i class=""></i> {{ $text ?? 'Delete' }}
+        <i class="{{ $icon }}"></i> {{ $text ?? 'Delete' }}
     </x-utils.form-button>
 @endif
