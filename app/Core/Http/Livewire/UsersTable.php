@@ -4,20 +4,20 @@ namespace App\Http\Livewire;
 
 use Domains\Auth\Models\User;
 use Illuminate\Database\Eloquent\Builder;
-use Rappasoft\LaravelLivewireTables\Views\Link;
-use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\TableComponent;
+use Rappasoft\LaravelLivewireTables\Views\Column;
+use Rappasoft\LaravelLivewireTables\Views\Link;
 
 class UsersTable extends TableComponent
 {
-    public $tableClass = "table table-bordered";
+    public $tableClass = 'table table-bordered';
 
-    public function query() : Builder
+    public function query(): Builder
     {
         return User::query();
     }
 
-    public function columns() : array
+    public function columns(): array
     {
         return [
             Column::make('ID')
@@ -30,27 +30,27 @@ class UsersTable extends TableComponent
                 ->searchable()
                 ->sortable(),
             Column::make('Role', 'roles_label'),
-            
+
             Column::make('Created At')
                 ->searchable()
                 ->sortable(),
             Column::make('Actions')
-                ->view('backend.users.actions')
-                // ->components([
-                //     Link::make('Edit')
-                //         ->icon('fas fa-pencil-alt')
-                //         ->class('btn btn-primary btn-sm')
-                //         ->href(function ($model) {
-                //             return route('backend.users.edit', $model->id);
-                //         })
-                //         ->hideIf(auth()->user()->can('users.edit')),
-                //     Link::make('Delete')
-                //         ->icon('fas fa-trash')
-                //         ->class('btn btn-danger btn-sm')
-                //         ->href(function ($model) {
-                //             return route('backend.users.delete', $model->id);
-                //         })
-                // ])
+                ->view('backend.users.actions'),
+            // ->components([
+            //     Link::make('Edit')
+            //         ->icon('fas fa-pencil-alt')
+            //         ->class('btn btn-primary btn-sm')
+            //         ->href(function ($model) {
+            //             return route('backend.users.edit', $model->id);
+            //         })
+            //         ->hideIf(auth()->user()->can('users.edit')),
+            //     Link::make('Delete')
+            //         ->icon('fas fa-trash')
+            //         ->class('btn btn-danger btn-sm')
+            //         ->href(function ($model) {
+            //             return route('backend.users.delete', $model->id);
+            //         })
+            // ])
         ];
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Backend\Http\Requests;
 
-use Illuminate\Http\Request;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
 
 class UserFormRequest extends FormRequest
@@ -27,13 +27,13 @@ class UserFormRequest extends FormRequest
     {
         $data = [
             'name' => 'required|string',
-            'email' => 'required|email|unique:users'
+            'email' => 'required|email|unique:users',
         ];
 
-        if(Request::METHOD_POST) {
+        if (Request::METHOD_POST) {
             $data['password'] = PasswordRules::register(request()->email);
             $data['email'] = 'required|email';
-        } 
+        }
 
         if (Request::METHOD_PATCH) {
             $data['email'] = 'required|email';

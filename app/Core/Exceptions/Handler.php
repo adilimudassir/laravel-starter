@@ -2,9 +2,9 @@
 
 namespace App\Exceptions;
 
-use Throwable;
-use Spatie\Permission\Exceptions\UnauthorizedException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Spatie\Permission\Exceptions\UnauthorizedException;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -14,7 +14,7 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        GeneralException::class
+        GeneralException::class,
     ];
 
     /**

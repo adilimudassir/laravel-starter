@@ -1,23 +1,23 @@
 <?php
+
 namespace Backend\Http\Controllers;
 
-use Domains\Auth\Models\Role;
 use App\Http\Controllers\Controller;
 use Backend\Http\Requests\UserFormRequest;
-use Domains\Auth\Repository\RoleRepository;
 use Domains\Auth\Repositories\UserRepository;
+use Domains\Auth\Repository\RoleRepository;
 
 class UserController extends Controller
 {
     /**
-     * Undocumented variable
+     * Undocumented variable.
      *
      * @var [UserRepository]
      */
     protected $userRepository;
-    
+
     /**
-     * create an instance of the controller
+     * create an instance of the controller.
      *
      * @param UserRepository $userRepository
      */
@@ -36,14 +36,14 @@ class UserController extends Controller
     public function create(RoleRepository $roleRepository)
     {
         return view('backend.users.create', [
-            'roles' => $roleRepository->all()->pluck('name', 'id')
+            'roles' => $roleRepository->all()->pluck('name', 'id'),
         ]);
     }
 
     public function store(UserFormRequest $request)
     {
         $this->userRepository->create($request);
-        
+
         return redirect()
             ->route('backend.users.index')
             ->withFlashSuccess('User Added Successfully!');
@@ -52,7 +52,7 @@ class UserController extends Controller
     public function show($id)
     {
         return view('backend.users.show', [
-            'user' => $this->userRepository->getById($id)
+            'user' => $this->userRepository->getById($id),
         ]);
     }
 
@@ -60,7 +60,7 @@ class UserController extends Controller
     {
         return view('backend.users.edit', [
             'user' => $this->userRepository->getById($id),
-            'roles' => $roleRepository->all()->pluck('name', 'id')
+            'roles' => $roleRepository->all()->pluck('name', 'id'),
         ]);
     }
 
@@ -70,11 +70,10 @@ class UserController extends Controller
             $request,
             $this->userRepository->getById($id)
         );
-        
+
         return redirect()
             ->route('backend.users.index')
             ->withFlashSuccess('User Updated Successfully!');
-
     }
 
     public function destroy($id)
@@ -84,6 +83,5 @@ class UserController extends Controller
         return redirect()
             ->route('backend.users.index')
             ->withFlashSuccess('User Deleted Successfully!');
-
     }
 }

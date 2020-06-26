@@ -3,9 +3,9 @@
 namespace Domains\Auth\Listeners;
 
 use Domains\Auth\Events\UserCreated;
-use Domains\Auth\Events\UserUpdated;
 use Domains\Auth\Events\UserLoggedIn;
 use Domains\Auth\Events\UserLoggedOut;
+use Domains\Auth\Events\UserUpdated;
 
 class UserEventSubscriber
 {

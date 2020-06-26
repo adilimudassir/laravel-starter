@@ -3,18 +3,18 @@
 namespace Domains\Auth\Events;
 
 use Domains\Auth\Models\User;
-use Illuminate\Queue\SerializesModels;
+use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
-use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Queue\SerializesModels;
 
 class UserCreated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
-    * @var [User]
-    */
+     * @var [User]
+     */
     public $user;
 
     /**
