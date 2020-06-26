@@ -12,6 +12,6 @@ class Permission extends SpatiePermission implements Recordable
     protected $fillable = [
         'name',
         'description',
-        'guard_name'
+        'guard_name',
     ];
 }

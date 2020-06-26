@@ -29,7 +29,7 @@ class UserController extends Controller
     public function index()
     {
         $this->authorize('read-users');
-        
+
         return view('backend.users.index', [
             //
         ]);

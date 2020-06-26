@@ -14,7 +14,7 @@ trait CreatePermissions
         'create',
         'read',
         'update',
-        'delete'
+        'delete',
     ];
 
     protected $entities = [
@@ -43,7 +43,7 @@ trait CreatePermissions
     {
         $this->assignRoleToPermission(Permission::firstOrCreate([
             'name' => $permission.'-'.$entity,
-            'description' => ucwords(($permission . " ". $entity))
+            'description' => ucwords(($permission.' '.$entity)),
         ]));
     }
 
@@ -51,7 +51,7 @@ trait CreatePermissions
     {
         $this->assignRoleToPermission(Permission::firstOrCreate([
             'name' => $permission,
-            'description' => ucwords(str_replace('-', ' ', $permission))
+            'description' => ucwords(str_replace('-', ' ', $permission)),
         ]));
     }
 
