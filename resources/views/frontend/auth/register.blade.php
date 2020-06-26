@@ -8,7 +8,8 @@
                 <div class="card">
                     <div class="card-header">Register</div>
                     <div class="card-body">
-                        <x-forms.post :action="route('frontend.auth.register')">
+                        <form method="POST" action="{{ route('frontend.auth.register') }}">
+                            @csrf
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -76,7 +77,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </x-forms.post>
+                        </form>
                     </div>
                 </div>
             </div>

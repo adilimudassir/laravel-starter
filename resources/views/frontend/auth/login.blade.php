@@ -8,7 +8,8 @@
                 <div class="card">
                     <div class="card-header">Login</div>
                     <div class="card-body">
-                        <x-forms.post :action="route('frontend.auth.login')">
+                        <form method="POST" action="{{ route('frontend.auth.login') }}">
+                            @csrf
                             <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -62,7 +63,7 @@
                                 @endif
                             </div>
                         </div>
-                        </x-forms.post>
+                        </form>
                     </div>
                 </div>
             </div>
