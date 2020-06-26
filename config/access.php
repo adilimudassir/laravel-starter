@@ -38,4 +38,6 @@ return [
         * false is off which doesn't log password changes or check against them
         */
     'password_history' => env('PASSWORD_HISTORY', 3),
+
+    'enable_registration' => env('ENABLE_REGISTRATION', false)
 ];
