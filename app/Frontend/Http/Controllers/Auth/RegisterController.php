@@ -2,14 +2,14 @@
 
 namespace Frontend\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
-use Domains\Auth\Models\User;
-use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Validator;
+use Domains\Auth\Models\User;
 use Domains\Auth\Repositories\UserRepository;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {

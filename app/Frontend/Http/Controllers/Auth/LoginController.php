@@ -2,12 +2,12 @@
 
 namespace Frontend\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Domains\Auth\Events\UserLoggedIn;
 use Domains\Auth\Events\UserLoggedOut;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -112,6 +112,7 @@ class LoginController extends Controller
 
         if ($this->attemptLogin($request)) {
             event(new UserLoggedIn($this->guard()->user()));
+
             return $this->sendLoginResponse($request);
         }
 
@@ -131,8 +132,8 @@ class LoginController extends Controller
      */
     public function logout(Request $request)
     {
-        event( new UserLoggedOut($request->user()));
-        
+        event(new UserLoggedOut($request->user()));
+
         $this->guard()->logout();
 
         $request->session()->invalidate();
