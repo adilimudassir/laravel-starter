@@ -2,8 +2,8 @@
 
 namespace Domains\Auth\Models;
 
-use Illuminate\Support\Collection;
 use Altek\Accountant\Contracts\Recordable;
+use Illuminate\Support\Collection;
 use Spatie\Permission\Models\Role as SpatieRole;
 
 class Role extends SpatieRole implements Recordable
@@ -28,8 +28,8 @@ class Role extends SpatieRole implements Recordable
     }
 
     /**
-    * @return Collection
-    */
+     * @return Collection
+     */
     public function getPermissionDescriptions(): Collection
     {
         return $this->permissions->pluck('description');

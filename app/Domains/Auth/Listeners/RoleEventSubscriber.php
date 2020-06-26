@@ -23,7 +23,7 @@ class RoleEventSubscriber
      */
     public function onCreated($event)
     {
-        \Log::info('Role Created: '.$event->Role->name .'. By: '.request()->Role()->name);
+        \Log::info('Role Created: '.$event->Role->name.'. By: '.request()->Role()->name);
     }
 
     /**
@@ -32,7 +32,7 @@ class RoleEventSubscriber
      */
     public function onUpdated($event)
     {
-        \Log::info('Role Updated: '.$event->Role->name .'. By: '.request()->Role()->name);
+        \Log::info('Role Updated: '.$event->Role->name.'. By: '.request()->Role()->name);
     }
 
     /**

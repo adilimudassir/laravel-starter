@@ -2,11 +2,10 @@
 
 namespace Backend\Http\Requests;
 
-use Illuminate\Http\Request;
 use Illuminate\Foundation\Http\FormRequest;
-use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
+use Illuminate\Http\Request;
 
-class roleFormRequest extends FormRequest
+class RoleFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -18,7 +17,7 @@ class roleFormRequest extends FormRequest
         if (request()->name === config('access.admin_role')) {
             return false;
         }
-        
+
         return auth()->user()->can('create-roles');
     }
 

@@ -1,22 +1,23 @@
 <?php
+
 namespace Backend\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Backend\Http\Requests\RoleFormRequest;
-use Domains\Auth\Repositories\RoleRepository;
 use Domains\Auth\Repositories\PermissionRepository;
+use Domains\Auth\Repositories\RoleRepository;
 
 class RoleController extends Controller
 {
     /**
-     * Undocumented variable
+     * Undocumented variable.
      *
      * @var [RoleRepository]
      */
     protected $roleRepository;
-    
+
     /**
-     * create an instance of the controller
+     * create an instance of the controller.
      *
      * @param RoleRepository $roleRepository
      */
@@ -39,7 +40,7 @@ class RoleController extends Controller
         $this->authorize('create-roles');
 
         return view('backend.roles.create', [
-            'permissions' => $permissionRepository->all()->pluck('name', 'id')
+            'permissions' => $permissionRepository->all()->pluck('name', 'id'),
         ]);
     }
 
@@ -48,7 +49,7 @@ class RoleController extends Controller
         $this->authorize('create-roles');
 
         $this->roleRepository->create($request);
-        
+
         return redirect()
             ->route('backend.roles.index')
             ->withFlashSuccess('Role Added Successfully!');
@@ -59,7 +60,7 @@ class RoleController extends Controller
         $this->authorize('read-roles');
 
         return view('backend.roles.show', [
-            'role' => $this->roleRepository->getById($id)
+            'role' => $this->roleRepository->getById($id),
         ]);
     }
 
@@ -69,7 +70,7 @@ class RoleController extends Controller
 
         return view('backend.roles.edit', [
             'role' => $this->roleRepository->getById($id),
-            'permissions' => $permissionRepository->all()->pluck('name', 'id')
+            'permissions' => $permissionRepository->all()->pluck('name', 'id'),
         ]);
     }
 
@@ -81,11 +82,10 @@ class RoleController extends Controller
             $request,
             $this->roleRepository->getById($id)
         );
-        
+
         return redirect()
             ->route('backend.roles.index')
             ->withFlashSuccess('Role Updated Successfully!');
-
     }
 
     public function destroy($id)
@@ -97,6 +97,5 @@ class RoleController extends Controller
         return redirect()
             ->route('backend.roles.index')
             ->withFlashSuccess('Role Deleted Successfully!');
-
     }
 }

@@ -4,22 +4,20 @@ namespace App\Http\Livewire;
 
 use Domains\Auth\Models\Role;
 use Illuminate\Database\Eloquent\Builder;
-use Rappasoft\LaravelLivewireTables\Views\Link;
-use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\TableComponent;
+use Rappasoft\LaravelLivewireTables\Views\Column;
 
 class RolesTable extends TableComponent
 {
-    public $tableClass = "table table-bordered";
+    public $tableClass = 'table table-bordered';
 
-    public function query() : Builder
+    public function query(): Builder
     {
         return Role::with('permissions:id,name,description')
             ->withCount('users');
-
     }
 
-    public function columns() : array
+    public function columns(): array
     {
         return [
             Column::make('ID')
@@ -39,7 +37,7 @@ class RolesTable extends TableComponent
             Column::make('Number of Users', 'users_count')
                 ->sortable(),
             Column::make('Actions')
-                ->view('backend.roles.actions')
+                ->view('backend.roles.actions'),
         ];
     }
 }

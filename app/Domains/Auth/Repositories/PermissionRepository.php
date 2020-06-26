@@ -2,8 +2,8 @@
 
 namespace Domains\Auth\Repositories;
 
-use Domains\Auth\Models\Permission;
 use App\Repositories\BaseRepository;
+use Domains\Auth\Models\Permission;
 
 class PermissionRepository extends BaseRepository
 {
