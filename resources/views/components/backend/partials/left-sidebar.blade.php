@@ -18,28 +18,34 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-parent {{ 
+                    @if(auth()->user()->hasAnyPermission(['read-users', 'read-roles'])) 
+                        <li class="nav-parent {{ 
                             Route::is('backend.users.*') || Route::is('backend.roles.*')
                             ? 'nav-expanded nav-active' 
                             : '' 
-                    }}">
+                        }}">
                         <a class="nav-link" href="#">
                             <i class="fas fa-lock" aria-hidden="true"></i>
                             <span>Authentication</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="{{ Route::is('backend.users.*') ? 'nav-active' : '' }}">
-                                <a class="nav-link" href="{{ route('backend.users.index') }}">
-                                    Users
-                                </a>
-                            </li>
-                            <li class="{{ Route::is('backend.roles.*') ? 'nav-active' : '' }}">
-                                <a class="nav-link" href="{{ route('backend.roles.index') }}">
-                                    Roles
-                                </a>
-                            </li>
+                            @can('read-users')
+                                <li class="{{ Route::is('backend.users.*') ? 'nav-active' : '' }}">
+                                    <a class="nav-link" href="{{ route('backend.users.index') }}">
+                                        Users
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('read-roles')
+                                <li class="{{ Route::is('backend.roles.*') ? 'nav-active' : '' }}">
+                                    <a class="nav-link" href="{{ route('backend.roles.index') }}">
+                                        Roles
+                                    </a>
+                                </li>
+                            @endcan
                         </ul>
                     </li>
+                    @endif
                 </ul>
             </nav>
         </div>

@@ -4,9 +4,11 @@
     </x-slot>
     <div class="row">
         <div class="col">
-            <div class="btn-group flex-wrap pull-right">
-                <a href="{{ route('backend.roles.edit', $role->id) }}" class="btn btn-sm btn-success">EDIT</a>
-            </div>
+            @can('update-roles')
+                <div class="btn-group flex-wrap pull-right">
+                    <a href="{{ route('backend.roles.edit', $role->id) }}" class="btn btn-sm btn-success">EDIT</a>
+                </div>
+            @endcan
         </div>
     </div>
     <x-backend.partials.tabs>
