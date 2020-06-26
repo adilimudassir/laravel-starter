@@ -1,10 +1,9 @@
 <?php
 namespace Backend\Http\Controllers;
 
-use Domains\Auth\Models\Role;
 use App\Http\Controllers\Controller;
 use Backend\Http\Requests\UserFormRequest;
-use Domains\Auth\Repository\RoleRepository;
+use Domains\Auth\Repositories\RoleRepository;
 use Domains\Auth\Repositories\UserRepository;
 
 class UserController extends Controller
@@ -28,6 +27,8 @@ class UserController extends Controller
 
     public function index()
     {
+        $this->authorize('read-users');
+        
         return view('backend.users.index', [
             //
         ]);
@@ -35,6 +36,8 @@ class UserController extends Controller
 
     public function create(RoleRepository $roleRepository)
     {
+        $this->authorize('create-users');
+
         return view('backend.users.create', [
             'roles' => $roleRepository->all()->pluck('name', 'id')
         ]);
@@ -42,6 +45,8 @@ class UserController extends Controller
 
     public function store(UserFormRequest $request)
     {
+        $this->authorize('created-users');
+
         $this->userRepository->create($request);
         
         return redirect()
@@ -51,6 +56,8 @@ class UserController extends Controller
 
     public function show($id)
     {
+        $this->authorize('read-users');
+
         return view('backend.users.show', [
             'user' => $this->userRepository->getById($id)
         ]);
@@ -58,6 +65,8 @@ class UserController extends Controller
 
     public function edit($id, RoleRepository $roleRepository)
     {
+        $this->authorize('update-users');
+
         return view('backend.users.edit', [
             'user' => $this->userRepository->getById($id),
             'roles' => $roleRepository->all()->pluck('name', 'id')
@@ -66,6 +75,8 @@ class UserController extends Controller
 
     public function update(UserFormRequest $request, $id)
     {
+        $this->authorize('update-users');
+
         $this->userRepository->update(
             $request,
             $this->userRepository->getById($id)
@@ -79,6 +90,8 @@ class UserController extends Controller
 
     public function destroy($id)
     {
+        $this->authorize('delete-users');
+
         $this->userRepository->delete($id);
 
         return redirect()

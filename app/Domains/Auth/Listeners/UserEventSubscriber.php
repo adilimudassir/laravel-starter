@@ -47,7 +47,7 @@ class UserEventSubscriber
      */
     public function onCreated($event)
     {
-        \Log::info('User Created');
+        \Log::info('User Created: '.$event->user->name .'. By: '.request()->user()->name);
     }
 
     /**
@@ -56,7 +56,7 @@ class UserEventSubscriber
      */
     public function onUpdated($event)
     {
-        \Log::info('User Update');
+        \Log::info('User Updated: '.$event->user->name .'. By: '.request()->user()->name);
     }
 
     /**

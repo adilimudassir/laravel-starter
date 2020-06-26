@@ -43,7 +43,7 @@ class UserRepository extends BaseRepository
             if ($request->has('roles')) {
                 $newUser->assignRole($request->roles);
             } else {
-                $newUser->assignRole('user');
+                $newUser->assignRole(config('access.default_role'));
             }
 
             event(new UserCreated($newUser));
@@ -67,7 +67,7 @@ class UserRepository extends BaseRepository
             if ($request->has('roles')) {
                 $user->syncRoles($request->roles);
             } else {
-                $user->syncRoles('user');
+                $user->syncRoles(config('access.default_role'));
             }
 
             event(new UserUpdated($user));

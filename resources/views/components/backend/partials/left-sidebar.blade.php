@@ -18,7 +18,11 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-parent {{ Route::is('backend.users.*') ? 'nav-expanded nav-active' : '' }}">
+                    <li class="nav-parent {{ 
+                            Route::is('backend.users.*') || Route::is('backend.roles.*')
+                            ? 'nav-expanded nav-active' 
+                            : '' 
+                    }}">
                         <a class="nav-link" href="#">
                             <i class="fas fa-lock" aria-hidden="true"></i>
                             <span>Authentication</span>
@@ -29,8 +33,8 @@
                                     Users
                                 </a>
                             </li>
-                            <li>
-                                <a class="nav-link" href="">
+                            <li class="{{ Route::is('backend.roles.*') ? 'nav-active' : '' }}">
+                                <a class="nav-link" href="{{ route('backend.roles.index') }}">
                                     Roles
                                 </a>
                             </li>

@@ -18,8 +18,8 @@ class PermissionRoleTableSeeder extends Seeder
 
         // Create Roles
         collect([
-            'admin',
-            'user',
+            config('access.admin_role'),
+            config('access.default_role'),
         ])->each(function ($role) {
             Role::firstOrCreate(['name' => $role]);
         });

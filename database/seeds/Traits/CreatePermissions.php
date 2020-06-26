@@ -6,15 +6,15 @@ use Spatie\Permission\Models\Permission;
 trait CreatePermissions
 {
     protected $permissions = [
-        'create',
-        'read',
-        'update',
-        'delete',
         [
             '*' => [
                 'access-backend',
             ],
         ],
+        'create',
+        'read',
+        'update',
+        'delete'
     ];
 
     protected $entities = [
@@ -35,7 +35,7 @@ trait CreatePermissions
 
     private function assignRoleToPermission($permission)
     {
-        $role = Role::findByName('admin');
+        $role = Role::findByName(config('access.admin_role'));
         $role->givePermissionTo($permission);
     }
 
@@ -43,6 +43,7 @@ trait CreatePermissions
     {
         $this->assignRoleToPermission(Permission::firstOrCreate([
             'name' => $permission.'-'.$entity,
+            'description' => ucwords(($permission . " ". $entity))
         ]));
     }
 
@@ -50,6 +51,7 @@ trait CreatePermissions
     {
         $this->assignRoleToPermission(Permission::firstOrCreate([
             'name' => $permission,
+            'description' => ucwords(str_replace('-', ' ', $permission))
         ]));
     }
 
