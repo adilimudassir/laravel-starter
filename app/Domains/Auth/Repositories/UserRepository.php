@@ -2,15 +2,15 @@
 
 namespace Domains\Auth\Repositories;
 
-use App\Exceptions\GeneralException;
-use App\Repositories\BaseRepository;
-use Backend\Http\Requests\UserFormRequest;
-use Domains\Auth\Events\UserCreated;
-use Domains\Auth\Events\UserUpdated;
-use Domains\Auth\Exceptions\UserException;
 use Domains\Auth\Models\User;
 use Illuminate\Support\Facades\DB;
+use App\Exceptions\GeneralException;
+use App\Repositories\BaseRepository;
+use Domains\Auth\Events\UserCreated;
+use Domains\Auth\Events\UserUpdated;
 use Illuminate\Support\Facades\Hash;
+use Backend\Http\Requests\UserFormRequest;
+use Domains\Auth\Exceptions\UserException;
 
 class UserRepository extends BaseRepository
 {

@@ -4,9 +4,8 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Composer;
-use Symfony\Component\Process\Process;
 
-class InstallCommand extends Command
+class Install extends Command
 {
     protected $composer;
     /**
@@ -28,12 +27,11 @@ class InstallCommand extends Command
      *
      * @return void
      */
-    public function __construct(Filesystem $files, Composer $composer)
+    public function __construct(Composer $composer)
     {
         parent::__construct();
 
         $this->composer = $composer;
-        $this->files = $files;
     }
 
     /**
@@ -61,7 +59,7 @@ class InstallCommand extends Command
         $this->info('Done!');
         
         $this->info('');
-        $this->info('Dumping the autoloaded files and reloading all new files');
+        $this->info('Dumping the autoload files and reloading all new files');
         $this->composer->dumpAutoloads();
         
         $this->info('Successfully Installed Application. Enjoy!');
