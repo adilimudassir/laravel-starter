@@ -10,6 +10,9 @@ trait CreatePermissions
             '*' => [
                 'access-backend',
             ],
+            'users' => [
+                'impersonate',
+            ]
         ],
         'create',
         'read',

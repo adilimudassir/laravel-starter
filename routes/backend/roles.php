@@ -2,7 +2,7 @@
 
 use Backend\Http\Controllers\RoleController;
 
-Route::group(['prefix' => 'roles', 'as' => 'roles.'], function () {
+Route::group(['prefix' => 'roles', 'as' => 'roles.', 'middleware' => 'impersonate.protect'], function () {
     Route::get('', [RoleController::class, 'index'])->name('index');
     Route::get('/create', [RoleController::class, 'create'])->name('create');
     Route::post('/store', [RoleController::class, 'store'])->name('store');

@@ -13,17 +13,6 @@
         class="btn btn-success btn-sm"
         icon="fas fa-edit"
     />
-    {{--
-    @if (! $model->isActive())
-        <x-utils.link
-            :href="route('backend.auth.users.mark', [$model, 1])"
-            class="btn btn-primary btn-sm"
-            icon="fas fa-sync-alt"
-            :text="__('Restore')"
-            name="confirm-item"
-            permission="access.users.reactivate" />
-    @endif
-    --}}
     @if ($model->id !== 1 && $model->id !== auth()->id())
         <x-utils.delete-button 
             :href="route('backend.users.delete', $model)" 
@@ -41,18 +30,15 @@
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="margin: 0px;">
                 <a class="dropdown-item" href="#">Clear Session</a>
-                <a class="dropdown-item" href="#">Login As {{ $model->name }}</a>
-                <a class="dropdown-item" href="#">Change Password</a>
-                {{--
-                @if ($model->id !== 1 && $model->id !== auth()->id())
+                @canBeImpersonated($model)
                     <x-utils.link
-                        :href="route('backend.auth.users.mark', [$model, 0])"
+                        :href="route('impersonate', $model->id)"
                         class="dropdown-item"
-                        :text="__('Deactivate')"
-                        name="confirm-item"
-                        permission="access.users.deactivate" />
-                @endif
-                --}}
+                        :text="'Login as ' . $model->name"
+                        permission="impersonate-users" 
+                    />
+                @endCanBeImpersonated
+                <a class="dropdown-item" href="#">Change Password</a>
             </div>
         </div>
     @endif

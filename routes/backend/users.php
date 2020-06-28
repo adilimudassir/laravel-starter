@@ -2,7 +2,7 @@
 
 use Backend\Http\Controllers\UserController;
 
-Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
+Route::group(['prefix' => 'users', 'as' => 'users.', 'middleware' => 'impersonate.protect'], function () {
     Route::get('', [UserController::class, 'index'])->name('index');
     Route::get('/create', [UserController::class, 'create'])->name('create');
     Route::post('/store', [UserController::class, 'store'])->name('store');

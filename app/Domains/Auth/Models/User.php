@@ -2,19 +2,21 @@
 
 namespace Domains\Auth\Models;
 
+use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Notifications\Notifiable;
 use Altek\Accountant\Contracts\Recordable;
-use Domains\Auth\Notifications\ResetPasswordNotification;
+use Lab404\Impersonate\Models\Impersonate;
 use Domains\Auth\Notifications\VerifyEmail;
-use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasRoles;
+use Domains\Auth\Notifications\ResetPasswordNotification;
+use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 
 class User extends Authenticatable implements Recordable, MustVerifyEmail
 {
-    use Notifiable,
-        HasRoles,
+    use HasRoles,
+        Notifiable,
+        Impersonate,
         MustVerifyEmailTrait,
         \Altek\Accountant\Recordable;
 
@@ -109,5 +111,35 @@ class User extends Authenticatable implements Recordable, MustVerifyEmail
         }
 
         return 'N/A';
+    }
+
+    /**
+     * Return true or false if the user can impersonate an other user.
+     *
+     * @param void
+     * @return  bool
+     */
+    public function canImpersonate(): bool
+    {
+        return $this->can('impersonate-users');
+    }
+
+    /**
+     * Return true or false if the user can be impersonate.
+     *
+     * @param void
+     * @return  bool
+     */
+    public function canBeImpersonated(): bool
+    {
+        return ! $this->isSuperAdmin();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSuperAdmin()
+    {
+        return $this->id === 1;
     }
 }

@@ -5,7 +5,7 @@ namespace Backend\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class AccessBackend
+class isSuperAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,14 +16,13 @@ class AccessBackend
      */
     public function handle($request, Closure $next)
     {
-        if (! Auth::check()) {
+        if (! auth()->check()) {
             return redirect(home_route());
         }
 
-        if (! optional(optional(auth())->user())->can('access-backend')) {
+        if (! auth()->user()->isSuperAdmin()) {
             return redirect(home_route());
         }
-
         return $next($request);
     }
 }

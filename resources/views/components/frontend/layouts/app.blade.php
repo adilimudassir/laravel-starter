@@ -10,6 +10,7 @@
     @endauth
     <main class="py-4">
         @include('partials.messages')
+        @include('partials.impersonate')
         {{ $slot }}
     </main>    
     <x-frontend.partials.footer />

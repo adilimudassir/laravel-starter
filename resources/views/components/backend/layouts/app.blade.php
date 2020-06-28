@@ -17,6 +17,7 @@
                     </div>
                 </header>
                 @include('partials.messages')
+                @include('partials.impersonate')
                 {{ $slot }}
             </main>
         </div>

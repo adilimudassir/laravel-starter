@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2020-06-28 14:53:45.
+    * Generated on 2020-06-28 16:07:52.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13,6 +13,13 @@ namespace PHPSTORM_META {
     override(new \Illuminate\Contracts\Container\Container, map([
         '' => '@',
         'Altek\Accountant\Contracts\Accountant' => \Altek\Accountant\Accountant::class,
+        'Arcanedev\LogViewer\Contracts\LogViewer' => \Arcanedev\LogViewer\LogViewer::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Factory' => \Arcanedev\LogViewer\Utilities\Factory::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Filesystem' => \Arcanedev\LogViewer\Utilities\Filesystem::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogLevels' => \Arcanedev\LogViewer\Utilities\LogLevels::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogMenu' => \Arcanedev\LogViewer\Utilities\LogMenu::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogStyler' => \Arcanedev\LogViewer\Utilities\LogStyler::class,
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
@@ -181,6 +188,13 @@ namespace PHPSTORM_META {
     override(\Illuminate\Container\Container::makeWith(0), map([
         '' => '@',
         'Altek\Accountant\Contracts\Accountant' => \Altek\Accountant\Accountant::class,
+        'Arcanedev\LogViewer\Contracts\LogViewer' => \Arcanedev\LogViewer\LogViewer::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Factory' => \Arcanedev\LogViewer\Utilities\Factory::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Filesystem' => \Arcanedev\LogViewer\Utilities\Filesystem::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogLevels' => \Arcanedev\LogViewer\Utilities\LogLevels::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogMenu' => \Arcanedev\LogViewer\Utilities\LogMenu::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogStyler' => \Arcanedev\LogViewer\Utilities\LogStyler::class,
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
@@ -349,6 +363,13 @@ namespace PHPSTORM_META {
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
         'Altek\Accountant\Contracts\Accountant' => \Altek\Accountant\Accountant::class,
+        'Arcanedev\LogViewer\Contracts\LogViewer' => \Arcanedev\LogViewer\LogViewer::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Factory' => \Arcanedev\LogViewer\Utilities\Factory::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Filesystem' => \Arcanedev\LogViewer\Utilities\Filesystem::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogLevels' => \Arcanedev\LogViewer\Utilities\LogLevels::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogMenu' => \Arcanedev\LogViewer\Utilities\LogMenu::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogStyler' => \Arcanedev\LogViewer\Utilities\LogStyler::class,
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
@@ -517,6 +538,13 @@ namespace PHPSTORM_META {
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
         'Altek\Accountant\Contracts\Accountant' => \Altek\Accountant\Accountant::class,
+        'Arcanedev\LogViewer\Contracts\LogViewer' => \Arcanedev\LogViewer\LogViewer::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Factory' => \Arcanedev\LogViewer\Utilities\Factory::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Filesystem' => \Arcanedev\LogViewer\Utilities\Filesystem::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogLevels' => \Arcanedev\LogViewer\Utilities\LogLevels::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogMenu' => \Arcanedev\LogViewer\Utilities\LogMenu::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogStyler' => \Arcanedev\LogViewer\Utilities\LogStyler::class,
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
@@ -685,6 +713,13 @@ namespace PHPSTORM_META {
     override(\App::make(0), map([
         '' => '@',
         'Altek\Accountant\Contracts\Accountant' => \Altek\Accountant\Accountant::class,
+        'Arcanedev\LogViewer\Contracts\LogViewer' => \Arcanedev\LogViewer\LogViewer::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Factory' => \Arcanedev\LogViewer\Utilities\Factory::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Filesystem' => \Arcanedev\LogViewer\Utilities\Filesystem::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogLevels' => \Arcanedev\LogViewer\Utilities\LogLevels::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogMenu' => \Arcanedev\LogViewer\Utilities\LogMenu::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogStyler' => \Arcanedev\LogViewer\Utilities\LogStyler::class,
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
@@ -853,6 +888,13 @@ namespace PHPSTORM_META {
     override(\App::makeWith(0), map([
         '' => '@',
         'Altek\Accountant\Contracts\Accountant' => \Altek\Accountant\Accountant::class,
+        'Arcanedev\LogViewer\Contracts\LogViewer' => \Arcanedev\LogViewer\LogViewer::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Factory' => \Arcanedev\LogViewer\Utilities\Factory::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Filesystem' => \Arcanedev\LogViewer\Utilities\Filesystem::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogLevels' => \Arcanedev\LogViewer\Utilities\LogLevels::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogMenu' => \Arcanedev\LogViewer\Utilities\LogMenu::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogStyler' => \Arcanedev\LogViewer\Utilities\LogStyler::class,
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
@@ -1021,6 +1063,13 @@ namespace PHPSTORM_META {
     override(\app(0), map([
         '' => '@',
         'Altek\Accountant\Contracts\Accountant' => \Altek\Accountant\Accountant::class,
+        'Arcanedev\LogViewer\Contracts\LogViewer' => \Arcanedev\LogViewer\LogViewer::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Factory' => \Arcanedev\LogViewer\Utilities\Factory::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Filesystem' => \Arcanedev\LogViewer\Utilities\Filesystem::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogLevels' => \Arcanedev\LogViewer\Utilities\LogLevels::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogMenu' => \Arcanedev\LogViewer\Utilities\LogMenu::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogStyler' => \Arcanedev\LogViewer\Utilities\LogStyler::class,
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
@@ -1189,6 +1238,13 @@ namespace PHPSTORM_META {
     override(\resolve(0), map([
         '' => '@',
         'Altek\Accountant\Contracts\Accountant' => \Altek\Accountant\Accountant::class,
+        'Arcanedev\LogViewer\Contracts\LogViewer' => \Arcanedev\LogViewer\LogViewer::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Factory' => \Arcanedev\LogViewer\Utilities\Factory::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\Filesystem' => \Arcanedev\LogViewer\Utilities\Filesystem::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogLevels' => \Arcanedev\LogViewer\Utilities\LogLevels::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogMenu' => \Arcanedev\LogViewer\Utilities\LogMenu::class,
+        'Arcanedev\LogViewer\Contracts\Utilities\LogStyler' => \Arcanedev\LogViewer\Utilities\LogStyler::class,
         'Asm89\Stack\CorsService' => \Asm89\Stack\CorsService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
