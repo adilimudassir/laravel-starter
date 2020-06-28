@@ -2,13 +2,13 @@
 
 namespace App\Console\Commands;
 
-use Composer\Composer;
 use Illuminate\Console\Command;
+use Illuminate\Support\Composer;
 use Symfony\Component\Process\Process;
 
 class InstallCommand extends Command
 {
-    private $composer;
+    protected $composer;
     /**
      * The name and signature of the console command.
      *
@@ -28,10 +28,12 @@ class InstallCommand extends Command
      *
      * @return void
      */
-    public function __construct(Composer $composer)
+    public function __construct(Filesystem $files, Composer $composer)
     {
-        $this->composer = $composer;
         parent::__construct();
+
+        $this->composer = $composer;
+        $this->files = $files;
     }
 
     /**
@@ -41,7 +43,6 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-        $composer = new Composer();
         $this->info('Installing');
         
         $this->info('');
@@ -61,10 +62,8 @@ class InstallCommand extends Command
         
         $this->info('');
         $this->info('Dumping the autoloaded files and reloading all new files');
-        // $composer = $this->findComposer();
-
-        $process = new Process(['composer dump']);
-        $process->setWorkingDirectory(base_path())->run();
-        $this->info('Successfully Installed MedEquip. Enjoy!');
+        $this->composer->dumpAutoloads();
+        
+        $this->info('Successfully Installed Application. Enjoy!');
     }
 }
