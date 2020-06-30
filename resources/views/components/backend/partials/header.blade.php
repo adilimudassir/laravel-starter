@@ -31,8 +31,13 @@
 				<ul class="list-unstyled mb-2">
 					<li class="divider"></li>
 					<li>
-						<a role="menuitem" tabindex="-1" href=""><i class="fas fa-user"></i> My
+						<a role="menuitem" tabindex="-1" href="{{ route('backend.profile') }}"><i class="fas fa-user"></i> My
 							Profile</a>
+					</li>
+					<li>
+						<a role="menuitem" tabindex="-1" href="{{ route('backend.change-password') }}"><i class="fas fa-lock"></i>
+						Change Password
+						</a>
 					</li>
 					<li>
 						<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fas fa-lock"></i>

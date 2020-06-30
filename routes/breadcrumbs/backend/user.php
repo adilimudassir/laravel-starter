@@ -23,3 +23,9 @@ Breadcrumbs::for('backend.users.edit', function ($trail, $userID) {
     $trail->parent('backend.users.index');
     $trail->push('Edit', route('backend.users.edit', $userID));
 });
+
+// Dashboard > Users > Index > Change Password
+Breadcrumbs::for('backend.users.change-password', function ($trail, $userID) {
+    $trail->parent('backend.users.index');
+    $trail->push('Change Password', route('backend.users.change-password', $userID));
+});

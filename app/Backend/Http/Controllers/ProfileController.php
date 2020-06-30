@@ -4,7 +4,7 @@ namespace Backend\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
-class DashboardController extends Controller
+class ProfileController extends Controller
 {
     /**
      * create an instance of the controller.
@@ -18,6 +18,6 @@ class DashboardController extends Controller
 
     public function __invoke()
     {
-        return view('backend.dashboard');
+        return view('backend.profile');
     }
 }

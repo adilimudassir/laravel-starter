@@ -1,6 +1,7 @@
 <?php
 
 use Backend\Http\Controllers\UserController;
+use Backend\Http\Controllers\UserPasswordController;
 
 Route::group(['prefix' => 'users', 'as' => 'users.', 'middleware' => 'impersonate.protect'], function () {
     Route::get('', [UserController::class, 'index'])->name('index');
@@ -10,4 +11,6 @@ Route::group(['prefix' => 'users', 'as' => 'users.', 'middleware' => 'impersonat
     Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
     Route::patch('/update/{id}', [UserController::class, 'update'])->name('update');
     Route::delete('/destroy/{id}', [UserController::class, 'destroy'])->name('delete');
+    Route::get('/change-password/{id}', [UserPasswordController::class, 'edit'])->name('change-password');
+    Route::post('/change-password/{id}', [UserPasswordController::class, 'update']);
 });

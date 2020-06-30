@@ -103,4 +103,23 @@ class UserRepository extends BaseRepository
 
         throw new GeneralException('There was a problem deleting this user. Please try again.');
     }
+
+    public function updatePassword(User $user, array $data = []) : User
+    {
+        return DB::transaction( function () use ($user, $data) {
+            
+            if (isset($data['current_password'])) {
+                throw_if(
+                    ! Hash::check($data['current_password'], $user->password),
+                    new GeneralException('That is not your old password.')
+                );
+            }
+            
+            $user->update([
+                'password' => Hash::make($data['password'])
+            ]);
+            
+            return $user;
+        });
+    }
 }

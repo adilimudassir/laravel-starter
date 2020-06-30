@@ -38,7 +38,12 @@
                         permission="impersonate-users" 
                     />
                 @endCanBeImpersonated
-                <a class="dropdown-item" href="#">Change Password</a>
+                <x-utils.link
+                    :href="route('backend.users.change-password', $model->id)"
+                    class="dropdown-item"
+                    :text="'Change Password'"
+                    permission="update-users" 
+                />
             </div>
         </div>
     @endif
