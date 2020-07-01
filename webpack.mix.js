@@ -20,11 +20,19 @@ mix.setPublicPath('public')
     .js('resources/js/backend/app.js', 'js/backend.js')
     .extract([
         'jquery',
+        'jquery-browser',
+        'jquery.placeholder',
+        'magnific-popup',
+        'nanoscroller',
         'bootstrap',
         'popper.js',
         'axios',
-        'lodash'
-        // 'animate.css'
+        'lodash',
+        'alpinejs',
+        'bootstrap-datepicker',
+        'animate.css',
+        '@fortawesome/fontawesome-free',
+        'sweetalert2'
 
     ])
     .sourceMaps();

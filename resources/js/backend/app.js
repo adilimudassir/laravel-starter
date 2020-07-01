@@ -24,3 +24,4 @@ if (typeof localStorage !== 'undefined') {
 
 
 require('../plugins');
+import 'alpinejs';
