@@ -8,5 +8,5 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 Route::group(['middleware' => 'verified', 'auth'], function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', DashboardController::class)->name('dashboard');
 });
