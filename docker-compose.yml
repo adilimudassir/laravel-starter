@@ -44,6 +44,17 @@ services:
     networks:
       - starter
 
+  redis:
+    image: redis
+    container_name: starter-redis
+    volumes:
+      ## keep redis data on localhost so we don't lose them ##
+      - ./docker-volumes-data/redis:/data
+    ports:
+      - ${REDIS_PORT}:6379
+    networks: 
+      - starter
+
 networks:
   starter:
     driver: bridge
