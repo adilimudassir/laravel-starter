@@ -40,10 +40,6 @@
 						</a>
 					</li>
 					<li>
-						<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fas fa-lock"></i>
-							Lock Screen</a>
-					</li>
-					<li>
 						<a role="menuitem" tabindex="-1" href="{{ route('frontend.auth.logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
 							<i class="fas fa-power-off"></i>
