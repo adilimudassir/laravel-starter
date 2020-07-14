@@ -1,4 +1,5 @@
 <?php
+
 namespace Backend\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -6,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class UserPasswordFormRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to do this request
+     * Determine if the user is authorized to do this request.
      *
      * @return bool
      */
@@ -16,7 +17,7 @@ class UserPasswordFormRequest extends FormRequest
             return true;
         }
 
-        if (request()->id === auth()->user()->id ) {
+        if (request()->id === auth()->user()->id) {
             return true;
         }
 
@@ -26,7 +27,7 @@ class UserPasswordFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'password' => 'confirmed'
+            'password' => 'confirmed',
         ];
     }
 }

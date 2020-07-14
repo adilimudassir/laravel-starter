@@ -2,15 +2,15 @@
 
 namespace Domains\Auth\Models;
 
-use Spatie\Permission\Traits\HasRoles;
-use Illuminate\Notifications\Notifiable;
 use Altek\Accountant\Contracts\Recordable;
-use Lab404\Impersonate\Models\Impersonate;
+use Domains\Auth\Notifications\ResetPasswordNotification;
 use Domains\Auth\Notifications\VerifyEmail;
+use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Domains\Auth\Notifications\ResetPasswordNotification;
-use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
+use Illuminate\Notifications\Notifiable;
+use Lab404\Impersonate\Models\Impersonate;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements Recordable, MustVerifyEmail
 {
@@ -106,8 +106,8 @@ class User extends Authenticatable implements Recordable, MustVerifyEmail
 
         if (\count($roles)) {
             return implode(
-                ', ', 
-                array_map(fn ($item) => ucwords($item), 
+                ', ',
+                array_map(fn ($item) => ucwords($item),
                 $roles)
             );
         }

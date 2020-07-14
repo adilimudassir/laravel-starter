@@ -1,7 +1,7 @@
 <?php
 
-use Backend\Http\Controllers\ProfileController;
 use Backend\Http\Controllers\DashboardController;
+use Backend\Http\Controllers\ProfileController;
 use Backend\Http\Controllers\UserPasswordController;
 
 Route::get('/dashboard', DashboardController::class)->name('dashboard');

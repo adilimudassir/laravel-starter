@@ -1,4 +1,5 @@
 <?php
+
 namespace Frontend\Http\Controllers;
 
 use App\Http\Controllers\Controller;

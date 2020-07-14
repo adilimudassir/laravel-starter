@@ -1,18 +1,19 @@
 <?php
+
 namespace Backend\Http\Controllers;
 
-use Domains\Auth\Repositories\UserRepository;
 use Backend\Http\Requests\UserPasswordFormRequest;
+use Domains\Auth\Repositories\UserRepository;
 
 class UserPasswordController
 {
     /**
-     *  @var [UserRepository] $userRepository
+     *  @var [UserRepository]
      */
     private UserRepository $userRepository;
 
     /**
-     * create an instance of the controller
+     * create an instance of the controller.
      *
      * @param UserRepository $userRepository
      */
@@ -22,14 +23,14 @@ class UserPasswordController
     }
 
     public function edit($id = null)
-    {   
+    {
         return view('backend.users.change-password', [
-            'user' => $this->userRepository->getById($id ?? auth()->user()->id)
+            'user' => $this->userRepository->getById($id ?? auth()->user()->id),
         ]);
     }
 
     public function update(UserPasswordFormRequest $request, $id = null)
-    {   
+    {
         $this->userRepository->updatePassword(
             $this->userRepository->getById($id ?? auth()->user()->id),
             $request->all()

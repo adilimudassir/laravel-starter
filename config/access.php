@@ -39,5 +39,5 @@ return [
         */
     'password_history' => env('PASSWORD_HISTORY', 3),
 
-    'enable_registration' => env('ENABLE_REGISTRATION', false)
+    'enable_registration' => env('ENABLE_REGISTRATION', false),
 ];

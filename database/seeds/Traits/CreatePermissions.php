@@ -12,7 +12,7 @@ trait CreatePermissions
             ],
             'users' => [
                 'impersonate',
-            ]
+            ],
         ],
         'create',
         'read',
