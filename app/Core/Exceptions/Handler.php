@@ -2,10 +2,9 @@
 
 namespace App\Exceptions;
 
-use Throwable;
-use App\Exceptions\GeneralException;
-use Spatie\Permission\Exceptions\UnauthorizedException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Spatie\Permission\Exceptions\UnauthorizedException;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {

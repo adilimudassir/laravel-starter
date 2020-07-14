@@ -23,6 +23,7 @@ class isSuperAdmin
         if (! auth()->user()->isSuperAdmin()) {
             return redirect(home_route());
         }
+
         return $next($request);
     }
 }

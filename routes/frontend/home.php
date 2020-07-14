@@ -1,7 +1,7 @@
 <?php
 
-use Frontend\Http\Controllers\HomeController;
 use Frontend\Http\Controllers\DashboardController;
+use Frontend\Http\Controllers\HomeController;
 
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');

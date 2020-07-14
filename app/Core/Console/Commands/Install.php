@@ -42,7 +42,7 @@ class Install extends Command
     public function handle()
     {
         $this->info('Installing');
-        
+
         $this->info('');
         $this->info('Generating Application Key...');
         $this->call('key:generate');
@@ -57,11 +57,11 @@ class Install extends Command
         $this->info('Seeding Database Records...');
         $this->call('db:seed');
         $this->info('Done!');
-        
+
         $this->info('');
         $this->info('Dumping the autoload files and reloading all new files');
         $this->composer->dumpAutoloads();
-        
+
         $this->info('Successfully Installed Application. Enjoy!');
     }
 }
