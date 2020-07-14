@@ -105,9 +105,11 @@ class User extends Authenticatable implements Recordable, MustVerifyEmail
         $roles = $this->getRoleNames()->toArray();
 
         if (\count($roles)) {
-            return implode(', ', array_map(function ($item) {
-                return ucwords($item);
-            }, $roles));
+            return implode(
+                ', ', 
+                array_map(fn ($item) => ucwords($item), 
+                $roles)
+            );
         }
 
         return 'N/A';
