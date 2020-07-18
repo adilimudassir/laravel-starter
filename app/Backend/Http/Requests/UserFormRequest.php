@@ -2,8 +2,8 @@
 
 namespace Backend\Http\Requests;
 
-use Illuminate\Http\Request;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
 
 class UserFormRequest extends FormRequest
