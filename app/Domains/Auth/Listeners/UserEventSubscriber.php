@@ -3,9 +3,9 @@
 namespace Domains\Auth\Listeners;
 
 use Domains\Auth\Events\UserCreated;
+use Domains\Auth\Events\UserUpdated;
 use Domains\Auth\Events\UserLoggedIn;
 use Domains\Auth\Events\UserLoggedOut;
-use Domains\Auth\Events\UserUpdated;
 
 class UserEventSubscriber
 {
@@ -30,7 +30,7 @@ class UserEventSubscriber
             'last_login_ip' => request()->getClientIp(),
         ]);
 
-        \Log::info('User Logged In: '.$event->user->name);
+        \Log::info('User Logged In: ' . $event->user->name);
     }
 
     /**
@@ -38,7 +38,7 @@ class UserEventSubscriber
      */
     public function onLoggedOut($event)
     {
-        \Log::info('User Logged Out: '.$event->user->name);
+        \Log::info('User Logged Out: ' . $event->user->name);
     }
 
     /**
@@ -47,7 +47,7 @@ class UserEventSubscriber
      */
     public function onCreated($event)
     {
-        \Log::info('User Created: '.$event->user->name.'. By: '.request()->user()->name);
+        \Log::info('User Created: ' . $event->user->name . '. By: ' . optional(request()->user())->name ?? $event->user->name);
     }
 
     /**
@@ -56,7 +56,7 @@ class UserEventSubscriber
      */
     public function onUpdated($event)
     {
-        \Log::info('User Updated: '.$event->user->name.'. By: '.request()->user()->name);
+        \Log::info('User Updated: ' . $event->user->name . '. By: ' . optional(request()->user())->name ?? $event->user->name);
     }
 
     /**

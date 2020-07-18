@@ -2,8 +2,8 @@
 
 namespace Backend\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Http\FormRequest;
 use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
 
 class UserFormRequest extends FormRequest
@@ -15,7 +15,6 @@ class UserFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return auth()->user()->can('create-users');
     }
 
     /**
